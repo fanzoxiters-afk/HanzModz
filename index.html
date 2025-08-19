@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANZ MODZ OFFICIAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-glow-color: #00ffff; /* Cyan Neon */
+            --secondary-glow-color: #ff00ff; /* Magenta Neon */
+            --bg-color: #0a0a1a;
+            --card-bg-color: rgba(20, 20, 40, 0.6);
+            --text-color: #e0e0e0;
+            --price-color: #00ff7f; /* Spring Green */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #0a0a1a, #1a0a1a, #0a1a1a, #1a1a0a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            animation: glowing-title 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 5px #fff, 0 0 10px var(--primary-glow-color), 0 0 20px var(--primary-glow-color), 0 0 30px var(--primary-glow-color);
+        }
+
+        @keyframes glowing-title {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px var(--primary-glow-color), 0 0 20px var(--primary-glow-color), 0 0 30px var(--primary-glow-color);
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px var(--secondary-glow-color), 0 0 30px var(--secondary-glow-color), 0 0 40px var(--secondary-glow-color);
+            }
+        }
+
+        .product-section {
+            margin-bottom: 50px;
+        }
+
+        .product-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-glow-color);
+            text-shadow: 0 0 5px var(--primary-glow-color);
+            border-bottom: 2px solid var(--primary-glow-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--card-bg-color);
+            border: 1px solid var(--primary-glow-color);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--secondary-glow-color);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .product-card .price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--price-color);
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px var(--price-color);
+        }
+
+        .order-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-glow-color), var(--secondary-glow-color));
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 10px var(--primary-glow-color);
+        }
+
+        .order-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--secondary-glow-color);
+        }
+
+        .info-section {
+            background: var(--card-bg-color);
+            border: 1px solid var(--primary-glow-color);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .info-section li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2eff2e; /* Green color for safety */
+            text-shadow: 0 0 5px #2eff2e;
+        }
+
+        .info-section li::before {
+            content: '✓ ';
+        }
+
+        .join-section {
+            text-align: center;
+        }
+        
+        .join-section h2 {
+             font-size: 1.5rem;
+             margin-bottom: 20px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            background: #25D366; /* WhatsApp Green */
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 10px #25D366;
+        }
+        
+        .join-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #25D366;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>HANZ MODZ OFFICIAL</h1>
+        </header>
+
+        <main>
+            <section class="product-section">
+                <h2>FILE ANDRO</h2>
+                <div class="product-grid">
+                    </div>
+            </section>
+
+            <section class="product-section">
+                <h2>FILE IOS</h2>
+                <div class="product-grid">
+                    </div>
+            </section>
+
+            <section class="product-section">
+                <h2>INJECTOR SXR</h2>
+                <div class="product-grid">
+                    </div>
+            </section>
+
+            <section class="product-section">
+                <h2>INJECTOR ZKG</h2>
+                <div class="product-grid">
+                    </div>
+            </section>
+
+            <section class="info-section">
+                <ul>
+                    <li>NO ILEGAL</li>
+                    <li>NO BANNED</li>
+                    <li>NO SUCRIN</li>
+                    <li>NO BLACKLIST</li>
+                    <li>SAFE 100%</li>
+                </ul>
+            </section>
+            
+            <section class="join-section">
+                 <h2>GABUNG SALURAN KAMI</h2>
+                 <a href="https://whatsapp.com/channel/0029VayOEhKFcow2UScRyt2j" class="join-btn" target="_blank">JOIN SALURAN HANZ MODZ 1</a>
+                 <a href="https://whatsapp.com/channel/0029VbBMPXWBPzjUFdr9jv3V" class="join-btn" target="_blank">JOIN SALURAN HANZ MODZ 2</a>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        const products = {
+            "FILE ANDRO": [
+                { name: "AIMDRAG 60%", price: "5K" },
+                { name: "AIMTRICK 55%", price: "5K" },
+                { name: "AIMDRAG XIT", price: "5K" },
+                { name: "AIMDRAG 75%", price: "10K" },
+                { name: "AIMTRICK 70%", price: "10K" },
+                { name: "AIMHEAD 70%", price: "10K" },
+                { name: "DRAG HS 70%", price: "10K" },
+                { name: "AIMDRAG 85%", price: "20K" },
+                { name: "AIMTRICK 87%", price: "20K" },
+                { name: "AIMHEAD 88%", price: "20K" },
+                { name: "AIMDRAG 99%", price: "30K" },
+                { name: "AIMTRICK 100%", price: "30K" },
+                { name: "DRAG HS 99 NON V5", price: "30K" },
+                { name: "DRAG LOCK", price: "30K" },
+                { name: "HEADLOCK 98% X HOLO SENJATA", price: "50K" },
+                { name: "LOCK HEAD 98%", price: "50K" },
+                { name: "LOCK SHOT 95%", price: "50K" },
+                { name: "LOCK BODY 98%", price: "50K" },
+                { name: "HOLO SENJATA", price: "10K" },
+                { name: "HOLO FULL BODY", price: "15K" }
+            ],
+            "FILE IOS": [
+                { name: "LOCK HEAD VIP IOS", price: "35K" },
+                { name: "LOCK SHOT 98% IOS", price: "40K" },
+                { name: "HEADLOCK 98% IOS", price: "50K" },
+                { name: "DRAG LOCK SMOTH IOS", price: "55K" },
+                { name: "AIMBODY IOS", price: "250K" },
+                { name: "AIMNECK IOS", price: "250K" },
+                { name: "AIMLOCK IOS", price: "250K" }
+            ],
+            "INJECTOR SXR": [
+                { name: "SXR PANIEL", price: "50.000" },
+                { name: "SXR IMPREX", price: "120.000" },
+                { name: "SXR EXTENTED", price: "180.000" }
+            ],
+            "INJECTOR ZKG": [
+                { name: "ZKG-BASIC", price: "35K" },
+                { name: "ZKG-ARTIC", price: "50K" },
+                { name: "ZKG-VOID", price: "150K" },
+                { name: "ZKG-HEADLOCK", price: "200K" },
+                { name: "ZKG-DRAGON", price: "250K" },
+                { name: "ZKG-PRIME", price: "300K" },
+                { name: "ZKG-AREXIN", price: "400K" },
+                { name: "ZKG-VELOXIN", price: "450K" }
+            ]
+        };
+
+        const waNumber = "6281352897113";
+
+        // Function to create and inject product cards into the DOM
+        function createProductCard(product) {
+            const waMessage = encodeURIComponent(`Bang saya nak beli ${product.name}`);
+            const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
+
+            return `
+                <div class="product-card">
+                    <h3>${product.name}</h3>
+                    <p class="price">${product.price}</p>
+                    <a href="${waLink}" class="order-btn" target="_blank">ORDER</a>
+                </div>
+            `;
+        }
+        
+        // Loop through product categories and populate the grids
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.product-section');
+            sections.forEach(section => {
+                const title = section.querySelector('h2').innerText;
+                const grid = section.querySelector('.product-grid');
+                if (products[title]) {
+                    grid.innerHTML = products[title].map(createProductCard).join('');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
